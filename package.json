@@ -6,7 +6,9 @@
   "license": "MPL-2.0",
   "type": "module",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "client:error": "encore gen client --services=hello --env=local --output=clientError.ts",
+    "client:success": "encore gen client --services=helloMatch --env=local --output=clientSuccess.ts"
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
@@ -18,5 +20,6 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.13.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

@@ -12,9 +12,11 @@ import { api } from "encore.dev/api";
 //
 //	curl http://localhost:4000/hello/World
 //
+type Type2 = "type2" | "type3";
+type TestType = {prop:Type2};
 export const get = api(
-  { expose: true, method: "GET", path: "/hello/:name" },
-  async ({ name }: { name: string }): Promise<Response> => {
+  { expose: true, method: "POST", path: "/hello/:name" },
+  async ({ name }: { name: string } & TestType): Promise<Response> => {
     const msg = `Hello ${name}!`;
     return { message: msg };
   }
